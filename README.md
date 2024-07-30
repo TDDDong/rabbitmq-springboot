@@ -1,0 +1,7 @@
+这是rabbitmq整合springboot的练习
+1.发布确认模式
+该demo实现了交换机的确认回调方法（confirmCallback） 交换机名称错误导致交换机未接受到消息
+且实现了消息队列的回退方法（returnCallback） routingkey不正确导致路由不到对应交换机
+2.备份交换机（alternate）
+路由不到的消息会被回退到交换机 并由交换机转发给备份交换机（fanout）进行处理
+预警队列和备份队列可以对该消息进行处理
